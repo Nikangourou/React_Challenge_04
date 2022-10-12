@@ -25,7 +25,10 @@ export const Button = styled.button`
   padding: 5px 10px;
   font-size: 20px;
   box-shadow: 2px 2px 2px #0000006b;
-  
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 1px #0000006b;
+  }
 `;
 
 export const ButtonOperation = styled.button`
@@ -36,6 +39,9 @@ export const ButtonOperation = styled.button`
   padding: 5px 10px;
   font-size: 20px;
   box-shadow: 2px 2px 2px #0000006b;
+  &:active {
+    transform: translateY(2px);
+  }
 `;
 
 export const ButtonReset = styled.button`
@@ -46,10 +52,13 @@ export const ButtonReset = styled.button`
   padding: 5px 10px;
   font-size: 20px;
   box-shadow: 2px 2px 2px #0000006b;
+  &:active {
+    transform: translateY(2px);
+  }
 `;
 
 export const ButtonEqual = styled.button`
-background-color: #436399;
+  background-color: #436399;
   border: none;
   color: white;
   border-radius: 5px;
@@ -57,4 +66,7 @@ background-color: #436399;
   font-size: 20px;
   grid-column: 2 / 4;
   box-shadow: 2px 2px 2px #0000006b;
+  &:active {
+    transform: translateY(2px);
+  }
 `;
