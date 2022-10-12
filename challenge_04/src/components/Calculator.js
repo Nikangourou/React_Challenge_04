@@ -10,7 +10,7 @@ import {
   ButtonEqual,
 } from "../Styles/Button";
 
-const initialState = {num: [], operations: [] };
+const initialState = { num: [], operations: [] };
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,19 +47,23 @@ const reducer = (state, action) => {
 
     case "total":
       let total;
-      if (state.num === "+" || state.num === "-" || state.num === "*") {
-        // remove the last element of the array if it is an operation
-        let tmp = [...state.operations.slice(0, -1)];
-        total = eval(tmp.join(""));
-      } else {
-        total = eval(state.operations.join(""));
-      }
 
-      return {
-        ...state,
-        num: total,
-        operations: [total],
-      };
+      try {
+        if (state.num === "+" || state.num === "-" || state.num === "*") {
+          // remove the last element of the array if it is an operation
+          let tmp = [...state.operations.slice(0, -1)];
+          total = eval(tmp.join(""));
+        } else {
+          total = eval(state.operations.join(""));
+        }
+        return {
+          ...state,
+          num: total,
+          operations: [total],
+        };
+      } catch (e) {
+        console.error(e);
+      }
 
     case "reset":
       return {
